@@ -11,7 +11,7 @@ Keep your ServiceNow Developer instance awake
 ## Windows
 * grab repo
 * run npm install
-* fill login-details.json
+* rename to and fill login-details.json 
 * download webdriver
 * add webdriver to PATH
 
@@ -29,7 +29,7 @@ Keep your ServiceNow Developer instance awake
   * sudo apt install xvfb
   * note: this will require dependencies to be created. Do this with:
     * sudo apt-get -f install
-* fill login-details.json 
+* rename to and fill login-details.json 
 * create a simple to bash script that runs the app as sudo. There is one example included.
 * run bash script on schedule via crontab. Note that direct path to the file and node (/usr/bin/node) is needed or it wont run.
 
