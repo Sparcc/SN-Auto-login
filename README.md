@@ -14,6 +14,7 @@ Keep your ServiceNow Developer instance awake
 * rename to and fill login-details.json 
 * download webdriver
 * add webdriver to PATH
+* schedule with whatever method. Windows Task Scheduler works well.
 
 ## Google Compute Engine Ubuntu VM with Chrome Webdriver
 * Install Node and NPM:
