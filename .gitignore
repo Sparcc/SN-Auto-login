@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# web drivers
+chromedriver*
+
+# config file
+login-details.json
