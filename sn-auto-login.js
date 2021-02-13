@@ -26,10 +26,12 @@ function runAutomation(loginDetails) {
   (async function example() {
     let options = new Options;
     options.headless();
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
     let driver = await new Builder()
     .forBrowser("chrome").setChromeOptions(options)
     .build();
-    
+
     try {
       await driver.get(loginDetails.instance_hostname + "/login.do");
       await driver.wait(until.titleIs("ServiceNow"), 10000);
