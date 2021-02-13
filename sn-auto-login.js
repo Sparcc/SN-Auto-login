@@ -1,6 +1,7 @@
 const { Builder, By, Key, until } = require("selenium-webdriver");
 
 const fs = require("fs");
+const { Options } = require("selenium-webdriver/chrome");
 
 
 // Login details file name is "./login-details.json"
@@ -23,7 +24,12 @@ fs.readFile("./login-details.json", "utf8", (err, data) => {
 
 function runAutomation(loginDetails) {
   (async function example() {
-    let driver = await new Builder().forBrowser("chrome").build();
+    let options = new Options;
+    options.headless();
+    let driver = await new Builder()
+    .forBrowser("chrome").setChromeOptions(options)
+    .build();
+    
     try {
       await driver.get(loginDetails.instance_hostname + "/login.do");
       await driver.wait(until.titleIs("ServiceNow"), 10000);
