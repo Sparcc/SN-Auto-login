@@ -54,13 +54,6 @@ async function runAutomation(loginDetailsList, options) {
         .findElement(By.id("user_password"))
         .sendKeys(loginDetails.password);
       await driver.findElement(By.id("sysverb_login")).click();
-          /*
-      await driver.wait(
-        until.elementLocated(
-          By.id("mainBannerImage16")
-        )
-      , 10000);
-      */
      await driver.wait(function() {
       return driver.executeScript('return document.readyState').then(function(readyState) {
             return readyState === 'complete';
