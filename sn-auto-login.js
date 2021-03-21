@@ -59,7 +59,13 @@ async function runAutomation(loginDetailsList, options) {
             return readyState === 'complete';
       });
      });
-    } 
+    }
+    catch(err){
+       await driver.close().catch(error => {
+        console.log(`Didnt properly login or create session for user ${loginDetails.username}`);
+        throw(error);
+      });
+    }
     finally {
       await driver.close().catch(error => {
         console.log(`Didnt close properly for user ${loginDetails.username}`);
