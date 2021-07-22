@@ -108,3 +108,4 @@ chromedriver*
 
 # config file
 login-details.json
+package-lock.json
